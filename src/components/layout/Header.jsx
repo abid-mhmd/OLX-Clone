@@ -48,15 +48,19 @@ function Header() {
             </button>
           </div>
           <div className="flex items-center !gap-6 text-[#002f34] !ml-2">
-            <button className="flex flex-col items-center justify-center text-[#002f34] hover:text-[#0071ff] transition-colors group">
+            <Link
+              to="/my-ads"
+              className="flex flex-col items-center justify-center text-[#002f34] hover:text-[#0071ff] transition-colors group"
+            >
               <IoHeartOutline
                 size={26}
                 className="text-[#002f34] group-hover:text-[#0071ff]"
               />
+
               <span className="text-[12px] font-medium text-[#002f34] !mt-0.5">
-                Wishlist
+                My Ads
               </span>
-            </button>
+            </Link>
             {user ? (
               <div className="relative">
                 <button

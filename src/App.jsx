@@ -6,6 +6,7 @@ import NotFound from "./pages/NoFound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { exp } from "firebase/firestore/pipelines";
 import ProtectedRoute from "./components/auth/ProtectedRoutes";
+import EditAd from "./pages/EditAd";
 
 function App() {
   return (
@@ -22,13 +23,21 @@ function App() {
           }
         />
         <Route
-          path="my-ads"
+          path="/my-ads"
           element={
             <ProtectedRoute>
               <MyAds />
             </ProtectedRoute>
           }
         />
+        <Route
+         path="/edit-ad/:id"
+         element={
+          <ProtectedRoute>
+            <EditAd/>
+          </ProtectedRoute>
+         }
+         />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
