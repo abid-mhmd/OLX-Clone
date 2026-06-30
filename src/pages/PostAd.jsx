@@ -117,6 +117,7 @@ function PostAd() {
                 <option value="Mobile Phones">Mobile Phones</option>
                 <option value="Furniture">Furniture</option>
                 <option value="Electronics">Electronics</option>
+                <option value="Properties">Properties</option>
               </select>
             </div>
             <div>
