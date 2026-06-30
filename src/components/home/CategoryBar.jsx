@@ -1,4 +1,4 @@
-import { HiMenuAlt2 } from "react-icons/hi"; // Perfect fit for the clean horizontal multi-bar layout
+import { HiMenuAlt2 } from "react-icons/hi";
 
 function CategoryBar() {
   const categories = [
@@ -27,8 +27,10 @@ function CategoryBar() {
             <span>ALL CATEGORIES</span>
           </button>
           {categories.map((category) => (
-            <button key={category}
-              className="text-[14px] font-medium text-[#002f34] bg-white border border-[#cbd5e1] hover:border-gray-400 !px-4 h-[38px] rounded-full flex items-center justify-center transition-colors shadow-sm flex-shrink-0">
+            <button
+              key={category}
+              className="text-[14px] font-medium text-[#002f34] bg-white border border-[#cbd5e1] hover:border-gray-400 !px-4 h-[38px] rounded-full flex items-center justify-center transition-colors shadow-sm flex-shrink-0"
+            >
               {category}
             </button>
           ))}

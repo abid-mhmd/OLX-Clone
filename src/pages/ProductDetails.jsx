@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-// import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { useNavigate, useParams } from "react-router-dom";
 import { Calendar, ChevronLeft, ChevronRight, MapPin, Tag } from "lucide-react";
-
-// import { db } from "../config/firebase";
+import { db } from "../config/firebase";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-import FooterBottom from "../components/layout/FooterBottom";
 import SellerCard from "../components/home/SellerCard";
-import { products } from "../utils/constants";
+import { getProduct } from "../services/productService";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -18,34 +16,21 @@ function ProductDetails() {
   const [loading, setLoading] = useState(true);
   const [currentImage, setCurrentImage] = useState(0);
 
-  //   useEffect(() => {
-  //     async function fetchProduct() {
-  //       try {
-  //         const docRef = doc(db, "products", id);
-  //         const docSnap = await getDoc(docRef);
-
-  //         if (docSnap.exists()) {
-  //           setProduct({
-  //             id: docSnap.id,
-  //             ...docSnap.data(),
-  //           });
-  //         }
-  //       } catch (error) {
-  //         console.log(error);
-  //       } finally {
-  //         setLoading(false);
-  //       }
-  //     }
-
-  //     fetchProduct();
-  //   }, [id]);
-
   useEffect(() => {
-    setLoading(true);
-    const foundProduct = products.find((item) => item.id === Number(id));
-    setProduct(foundProduct || null);
-    setLoading(false);
+    loadProduct();
   }, [id]);
+
+  async function loadProduct() {
+    try {
+      const data = await getProduct(id);
+
+      setProduct(data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   if (loading) {
     return (
@@ -57,7 +42,6 @@ function ProductDetails() {
         </div>
 
         <Footer />
-        <FooterBottom />
       </>
     );
   }
@@ -79,7 +63,6 @@ function ProductDetails() {
         </div>
 
         <Footer />
-        <FooterBottom />
       </>
     );
   }
@@ -101,9 +84,7 @@ function ProductDetails() {
           </button>
 
           <div className="grid md:grid-cols-3 !gap-6">
-            {/* Left Side */}
-            <div className="md:col-span-2 space-y-5">
-              {/* Image Gallery */}
+            <div className="md:col-span-2 !space-y-5">
               <div className="bg-white rounded-xl shadow overflow-hidden">
                 <div className="relative">
                   <img
@@ -156,7 +137,6 @@ function ProductDetails() {
                 )}
               </div>
 
-              {/* Product Info */}
               <div className="bg-white rounded-xl shadow !p-5">
                 <h2 className="text-3xl font-bold">₹ {product.price}</h2>
 
@@ -178,7 +158,6 @@ function ProductDetails() {
                 </div>
               </div>
 
-              {/* Description */}
               <div className="bg-white rounded-xl shadow !p-5">
                 <h2 className="font-bold text-lg !mb-3">Description</h2>
                 <p className="text-gray-600 leading-7">{product.description}</p>
@@ -189,7 +168,6 @@ function ProductDetails() {
         </div>
       </div>
       <Footer />
-      <FooterBottom />
     </>
   );
 }

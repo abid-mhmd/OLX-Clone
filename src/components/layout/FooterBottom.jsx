@@ -20,24 +20,16 @@ export default function FooterBottom() {
             </div>
             <div className="w-px h-12 bg-blue-400" />
           </div>
-
-          {/* OLX */}
           <div className="text-3xl font-black italic tracking-tight">
             OI<span className="text-white">X</span>
           </div>
-
-          {/* Carwale */}
           <div className="text-lg font-bold flex items-center !gap-1">
             <span className="border border-white rounded !px-1 text-sm">□</span>{" "}
             carwale
           </div>
-
-          {/* Bikewale */}
           <div className="text-lg font-bold flex items-center !gap-1">
             <span className="text-sm">🔵</span> bikewale
           </div>
-
-          {/* CarTrade */}
           <div className="text-lg font-bold">
             Car
             <span className="bg-white text-[#1a3c8f] !px-1 rounded !mx-0.5">
@@ -45,8 +37,6 @@ export default function FooterBottom() {
             </span>
             rade
           </div>
-
-          {/* Mobility Outlook */}
           <div className="text-sm font-bold flex items-center !gap-1">
             <span className="text-lg">⊞</span>
             <span className="leading-tight">
@@ -56,8 +46,6 @@ export default function FooterBottom() {
             </span>
           </div>
         </div>
-
-        {/* Bottom Row */}
         <div className="flex items-center justify-between !pt-4 text-sm text-blue-200 flex-wrap gap-2">
           <div className="flex !gap-3">
             <span className="cursor-pointer hover:text-white">Help</span>

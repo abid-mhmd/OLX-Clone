@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { uploadImages } from "../services/clooudinaryService";
+import { uploadImages } from "../services/cloudinaryService";
 import { createProduct } from "../services/productService";
 import { validateProduct } from "../utils/validation";
 import { useAuth } from "../hooks/useAuth";
@@ -53,12 +53,12 @@ function PostAd() {
       const imageUrls = await uploadImages(formData.images);
       await createProduct({
         title: formData.title,
-        category: formData.category, 
+        category: formData.category,
         price: Number(formData.price),
         location: formData.location,
         description: formData.description,
         images: imageUrls,
-        userId: user?.uid ,
+        userId: user?.uid,
         userName: user?.displayName || "User",
         userPhoto: user?.photoURL || "",
         date: new Date().toLocaleDateString(),
@@ -102,7 +102,8 @@ function PostAd() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-[#002f34] !mb-2">
-                Category <span className="text-gray-500 text-xs !ml-0.5">*</span>
+                Category{" "}
+                <span className="text-gray-500 text-xs !ml-0.5">*</span>
               </label>
               <select
                 name="category"
@@ -136,7 +137,9 @@ function PostAd() {
                 Price <span className="text-gray-500 text-xs !ml-0.5">*</span>
               </label>
               <div className="relative flex items-center">
-                <span className="absolute !left-4 text-gray-500 text-[15px]">₹</span>
+                <span className="absolute !left-4 text-gray-500 text-[15px]">
+                  ₹
+                </span>
                 <input
                   type="number"
                   name="price"
@@ -162,7 +165,8 @@ function PostAd() {
             </div>
             <div>
               <label className="block text-sm font-medium text-[#002f34] !mb-2">
-                Location <span className="text-gray-500 text-xs !ml-0.5">*</span>
+                Location{" "}
+                <span className="text-gray-500 text-xs !ml-0.5">*</span>
               </label>
               <input
                 type="text"
@@ -179,7 +183,10 @@ function PostAd() {
               </label>
               <label className="flex flex-col items-center justify-center w-full h-[48px] border border-dashed border-[#cbd5e1] rounded-md cursor-pointer hover:bg-gray-50/50 transition-colors bg-white">
                 <span className="text-sm text-gray-500 font-normal">
-                  Choose Files <span className="text-gray-400 text-xs !ml-1">No file chosen</span>
+                  Choose Files{" "}
+                  <span className="text-gray-400 text-xs !ml-1">
+                    No file chosen
+                  </span>
                 </span>
                 <input
                   type="file"
@@ -193,7 +200,10 @@ function PostAd() {
             {previewImages.length > 0 && (
               <div className="grid grid-cols-4 !gap-3 !pt-1">
                 {previewImages.map((image, index) => (
-                  <div key={index} className="aspect-square w-full rounded-md border border-gray-200 overflow-hidden bg-gray-50">
+                  <div
+                    key={index}
+                    className="aspect-square w-full rounded-md border border-gray-200 overflow-hidden bg-gray-50"
+                  >
                     <img
                       src={image}
                       alt=""

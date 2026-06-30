@@ -1,4 +1,4 @@
-import car from "../assets/images/cars.png"
+import car from "../assets/images/cars.png";
 import bike from "../assets/images/Bikes.png";
 import property from "../assets/images/Properties.png";
 import mobile from "../assets/images/Mobiles.png";

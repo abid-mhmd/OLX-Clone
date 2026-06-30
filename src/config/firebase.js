@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getAuth ,GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 // Firebase configuration
@@ -14,7 +14,6 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-
 const app = initializeApp(firebaseConfig);
 
 // Authentication
@@ -26,5 +25,3 @@ const analytics = getAnalytics(app);
 
 // Firestore Database
 export const db = getFirestore(app);
-
-

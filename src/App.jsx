@@ -31,13 +31,13 @@ function App() {
           }
         />
         <Route
-         path="/edit-ad/:id"
-         element={
-          <ProtectedRoute>
-            <EditAd/>
-          </ProtectedRoute>
-         }
-         />
+          path="/edit-ad/:id"
+          element={
+            <ProtectedRoute>
+              <EditAd />
+            </ProtectedRoute>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

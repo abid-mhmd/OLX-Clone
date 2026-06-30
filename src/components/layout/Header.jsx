@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoSearch, IoHeartOutline } from "react-icons/io5";
 import { HiOutlineLocationMarker, HiOutlineChevronRight } from "react-icons/hi";
-import { FiUser } from "react-icons/fi"; // Fixed package path from react-fi to react-icons/fi
+import { FiUser } from "react-icons/fi";
 import { useAuth } from "../../hooks/useAuth";
 import LoginModal from "../auth/LoginModal";
 
@@ -22,7 +22,7 @@ function Header() {
         <div className="max-w-7xl mx-auto flex items-center justify-between !gap-3 !px-4 !py-2">
           <Link to="/" className="flex-shrink-0 !mr-2">
             <img
-              src="image.png"
+              src="/image.png"
               alt="OLX"
               className="w-[64px] h-[38px] object-contain"
             />

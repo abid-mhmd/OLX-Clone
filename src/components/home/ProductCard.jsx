@@ -5,13 +5,13 @@ function ProductCard({ product }) {
   return (
     <Link
       to={`/product/${product.id}`}
-      className="bg-white rounded shadow hover:shadow-lg transition overflow-hidden"
+      className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
     >
-      <div className="relativ">
+      <div className="relative">
         <img
-          src={product.image}
+          src={product.images?.[0] || product.img}
           alt={product.title}
-          className="w-full h-52 object-cover"
+          className="w-full h-40 object-cover"
         />
         <button className="absolute !top-3 !right-3 bg-white rounded-full !p-2">
           <IoHeartOutline size={20} />

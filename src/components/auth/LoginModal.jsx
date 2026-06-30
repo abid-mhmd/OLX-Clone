@@ -46,7 +46,6 @@ function LoginModal({ onClose }) {
         </button>
         <div className="flex flex-col items-center">
           <div className="text-7xl !mb-5">{slides[slide].emoji}</div>
-
           <div className="flex items-center !gap-5">
             <button
               onClick={() =>
